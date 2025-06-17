@@ -1,11 +1,11 @@
 import { Metadata } from "next";
-import CanvaParent from "./3d_components/CanvaParent";
+
+import Main from "./Main";
 
 export default function Home() {
    return (
-      <div className="w-full h-screen">
-         <h1>Marc Rainier</h1>
-         <CanvaParent />
+      <div>
+         <Main />
       </div>
    );
 }

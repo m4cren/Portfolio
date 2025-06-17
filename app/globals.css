@@ -1,1 +1,4 @@
 @import "tailwindcss";
+@utility cam-ctrl-btn {
+   @apply text-black/60 font-semibold text-[0.9rem] p-3 border-1 border-black/50 rounded-md;
+}
