@@ -106,5 +106,12 @@
       <img src="./figma/Mobile (Contact).jpg" width="300"/>
     </td>
   </tr>
+   <tr>
+    <td>
+      <p><strong>Menu</strong></p>
+      <img src="./figma/Mobile (Menu).jpg" width="300"/>
+    </td>
+ 
+  </tr>
 
 </table>
