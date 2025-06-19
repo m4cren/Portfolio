@@ -1,4 +1,59 @@
 @import "tailwindcss";
+@theme {
+   --color-softbutter: #f6f7dd;
+   --color-leather: #a67c5b;
+   --color-goldenbeige: #c9ad7f;
+}
 @utility cam-ctrl-btn {
    @apply text-black/60 font-semibold text-[0.9rem] p-3 border-1 border-black/50 rounded-md;
+}
+
+h1 {
+   @apply text-softbutter font-bold text-5xl md:text-7xl [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)];
+}
+h4 {
+   @apply text-softbutter font-medium text-xl md:text-3xl [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)];
+}
+
+p {
+   @apply text-softbutter font-medium text-sm md:text-lg [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)];
+}
+.icon-shadow {
+   filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.4));
+}
+.hover-animation {
+   animation: hoverLink 0.2s ease-out;
+}
+
+.open-menu-animation {
+   animation: toggleMenu 0.35s ease-out;
+}
+.close-menu-animation {
+   animation: toggleMenuClose 0.35s ease-out;
+}
+
+@keyframes hoverLink {
+   from {
+      width: 0%;
+   }
+   to {
+      width: 100%;
+   }
+}
+
+@keyframes toggleMenu {
+   from {
+      transform: translateY(100%);
+   }
+   to {
+      transform: translateY(0);
+   }
+}
+@keyframes toggleMenuClose {
+   from {
+      transform: translateY(0);
+   }
+   to {
+      transform: translateY(100%);
+   }
 }

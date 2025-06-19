@@ -2,14 +2,14 @@ import { useState } from "react";
 import useFrameProvider from "../useFrameProvider";
 
 const useCameraTools = () => {
-   const { to_service, to_skilss, init_Frame, to_contact } = useFrameProvider();
-   const [posX, setPosX] = useState<number>(to_contact.frame.pos[0]);
-   const [posY, setPosY] = useState<number>(to_contact.frame.pos[1]);
-   const [posZ, setPosZ] = useState<number>(to_contact.frame.pos[2]);
+   const { init_Frame } = useFrameProvider();
+   const [posX, setPosX] = useState<number>(init_Frame.pos[0]);
+   const [posY, setPosY] = useState<number>(init_Frame.pos[1]);
+   const [posZ, setPosZ] = useState<number>(init_Frame.pos[2]);
 
-   const [rotX, setRotX] = useState<number>(to_contact.frame.rot[0]);
-   const [rotY, setRotY] = useState<number>(to_contact.frame.rot[1]);
-   const [rotZ, setRotZ] = useState<number>(to_contact.frame.rot[2]);
+   const [rotX, setRotX] = useState<number>(init_Frame.rot[0]);
+   const [rotY, setRotY] = useState<number>(init_Frame.rot[1]);
+   const [rotZ, setRotZ] = useState<number>(init_Frame.rot[2]);
 
    const camPos: [number, number, number] = [posX, posY, posZ];
    const camRot: [number, number, number] = [rotX, rotY, rotZ];

@@ -1,30 +1,25 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "./components/Navbar/NavBar";
+import ActiveSectionContextProvider from "./lib/contexts/ActiveSectionProvider";
 
-const geistSans = Geist({
-   variable: "--font-geist-sans",
-   subsets: ["latin"],
+const spaceGrotesk = localFont({
+   src: "../public/fonts/SpaceGrotesk-VariableFont_wght.ttf",
 });
-
-const geistMono = Geist_Mono({
-   variable: "--font-geist-mono",
-   subsets: ["latin"],
-});
-
 export default function RootLayout({
    children,
 }: Readonly<{
    children: React.ReactNode;
 }>) {
    return (
-      <html lang="en">
-         <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-         >
-            {children}
-         </body>
+      <html
+         lang="en"
+         className="scroll-smooth snap-y snap-mandatory overflow-x-hidden"
+      >
+         <ActiveSectionContextProvider>
+            <body className={`${spaceGrotesk.className} antialiased`}>
+               {children}
+            </body>
+         </ActiveSectionContextProvider>
       </html>
    );
 }
