@@ -17,7 +17,7 @@ export default function Home() {
       <div className="relative ">
          <Main />
 
-         <main className="bg-[#00000070] backdrop-blur-[6px] ">
+         <main className="bg-black/40 backdrop-blur-[6px] [-webkit-backdrop-filter:blur(6px)] ">
             <NavBar
                handleToggle={handleToggle}
                isMenuToggle={isToggleMenu}

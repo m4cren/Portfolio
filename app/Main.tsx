@@ -56,7 +56,7 @@ const Main = () => {
    }, [activeSection]);
 
    return (
-      <div className="fixed top-0 left-0 right-0 ">
+      <div className="fixed top-0 left-0 right-0 inset-0 -z-10 ">
          <Scene camPos={camPos} camRot={camRot} />
          {/* <div className="fixed bottom-0 left-0 right-0">
             <CameraControlls cameraFunctions={cameraFunctions} />

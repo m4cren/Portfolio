@@ -33,7 +33,7 @@ const ToggleMenu = ({
                   <p
                      onClick={handleClosing}
                      className={classNames(
-                        "relative cursor-pointer text-2xl! md:text-4xl!  font-medium! hover:text-goldenbeige! transition-all! duration-250!",
+                        "relative cursor-pointer text-2xl! md:text-3xl!  font-medium! hover:text-goldenbeige! transition-all! duration-250!",
                         {
                            underline: activeSection === link?.value,
                         },
