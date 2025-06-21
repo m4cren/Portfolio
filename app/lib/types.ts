@@ -20,3 +20,12 @@ export type CameraType = {
    pos: [number, number, number];
    rot: [number, number, number];
 };
+
+export type TechStackTypes = {
+   label: string;
+   icon: string;
+   category: "Languages" | "Libraries" | "Frameworks" | "Databases" | "Tools";
+   description: string;
+   experience: string;
+   use: string;
+};

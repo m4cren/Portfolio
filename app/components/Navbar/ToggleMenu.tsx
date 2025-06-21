@@ -20,6 +20,7 @@ const ToggleMenu = ({
 
    return (
       <div
+         style={{ boxShadow: "0px 3px 8px rgba(0,0,0,0.5)" }}
          className={classNames(
             "open-menu-animation lg:hidden fixed bottom-0 right-0 left-0 z-[8] h-[50vh] md:h-[38vh] rounded-t-4xl bg-gradient-to-t from-leather to-goldenbeige [box-shadow:0_0_4px_rgba(0,0,0,0.3)_inset]",
             {
@@ -44,6 +45,10 @@ const ToggleMenu = ({
                </li>
             ))}
          </ul>
+         <p className="absolute bottom-2 min-[390px]:bottom-10 md:bottom-6 left-0 right-0 text-softbutter/65! font-light! text-xs! md:text-sm! text-center">
+            © 2025 Rainier Reyes. Built with Next.js, React Three Fiber &
+            Tailwind.
+         </p>
       </div>
    );
 };
