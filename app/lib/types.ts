@@ -29,3 +29,21 @@ export type TechStackTypes = {
    experience: string;
    use: string;
 };
+
+export type ProjectTypes = {
+   label: string;
+   short_description: string;
+   long_details: string;
+   image_url: string;
+   video_url: string;
+   date_range: string;
+   project_details: string;
+   github_repo: string;
+   link?: string;
+   tech_stack: {
+      frontend?: string[];
+      backend?: string[];
+      integrated_api?: string[];
+      others?: string[];
+   };
+};

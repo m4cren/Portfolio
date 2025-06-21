@@ -15,7 +15,7 @@ const HomeSection = () => {
                <h4>I'm a Website Developer</h4>
                <p className=" w-[95%] md:w-[60%] mt-4 md:mt-6">
                   A 2nd-year Computer Engineering student at Laguna State
-                  Polythecnic University - San Pablo Laguna, passionate about
+                  Polytechnic University - San Pablo Laguna, passionate about
                   software development and building fast, user friendly web
                   applications
                </p>

@@ -28,7 +28,7 @@ const NavBar = ({
                className="w-[4rem] h-[4rem] md:w-[5rem] md:h-[5rem] [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] rounded-full border-2 border-leather p-1"
             />
          </div>
-         <ul className="flex flex-row items-center  xl:w-[50%] justify-around ">
+         <ul className="flex flex-row items-center  lg:w-[80%] xl:w-[50%] justify-around ">
             {links.map((link, index) => (
                <li key={index} className="hidden lg:flex ">
                   <p

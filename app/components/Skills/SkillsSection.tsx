@@ -1,6 +1,9 @@
 "use client";
+import AnimatedSphere from "@/app/3d_components/Sphere";
 import { techStack } from "@/app/lib/constants";
+import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
 import { TechStackTypes } from "@/app/lib/types";
+import { Canvas } from "@react-three/fiber";
 import classNames from "classnames";
 import { Clock, Presentation } from "lucide-react";
 import Image from "next/image";
@@ -12,6 +15,7 @@ const buttons = {
 };
 
 const SkillsSection = () => {
+   const { screenWidth } = useActiveSection();
    const [selectedCategory, setSelectedCategory] = useState<{
       upper: "Languages" | "Libraries" | "Frameworks";
       lower: "Databases" | "Tools";
@@ -60,20 +64,20 @@ const SkillsSection = () => {
                            {selectedTech.label}
                         </h4>
                      </div>
-                     <p className="w-[80vw] md:w-[65vw] lg:w-[25rem] text-xs! md:text-sm! text-center lg:text-start">
+                     <p className="w-[80vw] md:w-[65vw] lg:w-[25rem] text-xs! md:text-[1rem]! text-center lg:text-start">
                         {selectedTech.description}
                      </p>
                   </div>
                   <div className="flex flex-col gap-0 md:gap-2">
                      <span className="text-softbutter  flex flex-row items-center gap-2 ">
                         <Clock size={20} />{" "}
-                        <p className="font-light! text-xs! lg:text-sm!">
+                        <p className="font-light! text-xs! lg:text-[1rem]!">
                            {selectedTech.experience}
                         </p>
                      </span>
                      <span className="text-softbutter  flex flex-row items-center gap-2 ">
                         <Presentation size={20} />{" "}
-                        <p className="font-light! text-xs! lg:text-sm!">
+                        <p className="font-light! text-xs! lg:text-[1rem]!">
                            {" "}
                            {selectedTech.use}
                         </p>
@@ -81,7 +85,7 @@ const SkillsSection = () => {
                   </div>
                </div>
             ) : (
-               <p>Hover any technology</p>
+               <AnimatedSphere />
             )}
 
             <div className="flex flex-col gap-4 min-[350px]:gap-10 md:gap-12">
@@ -89,7 +93,7 @@ const SkillsSection = () => {
                   <h1 className="text-3xl! min-[350px]:text-4xl! md:text-5xl!">
                      Technology Stack
                   </h1>
-                  <p className="text-xs! min-[350px]:text-md!">
+                  <p className="text-xs! min-[350px]:text-[1rem]!">
                      Designing interactive, user-first experiences for the
                      moderen web.
                   </p>
@@ -123,6 +127,11 @@ const SkillsSection = () => {
                            <li
                               key={index}
                               onPointerEnter={() => setSelectedTech(item)}
+                              onPointerLeave={() => {
+                                 if (screenWidth > 890) {
+                                    setSelectedTech(null);
+                                 }
+                              }}
                               className="flex flex-col items-center cursor-pointer"
                            >
                               <Image
@@ -132,7 +141,7 @@ const SkillsSection = () => {
                                  height={35}
                                  className="drop-shadow-md w-8 h-8 md:w-10 md:h-10 object-contain"
                               />
-                              <p className="text-xs! md:text-xl!">
+                              <p className="text-xs! md:text-lg!">
                                  {item.label}
                               </p>
                            </li>
@@ -166,6 +175,11 @@ const SkillsSection = () => {
                         {filteredLower.map((item, index) => (
                            <li
                               key={index}
+                              onPointerLeave={() => {
+                                 if (screenWidth > 890) {
+                                    setSelectedTech(null);
+                                 }
+                              }}
                               onPointerEnter={() => setSelectedTech(item)}
                               className="flex flex-col items-center cursor-pointer"
                            >
@@ -176,7 +190,7 @@ const SkillsSection = () => {
                                  height={35}
                                  className="drop-shadow-md w-8 h-8 md:w-10 md:h-10 object-contain"
                               />
-                              <p className="text-xs! md:text-xl!">
+                              <p className="text-xs! md:text-lg!">
                                  {item.label}
                               </p>
                            </li>

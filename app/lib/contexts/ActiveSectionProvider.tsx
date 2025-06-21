@@ -48,7 +48,11 @@ const ActiveSectionContextProvider = ({
                }
             });
          },
-         { root: null, threshold: 0.5 },
+         {
+            root: null,
+            threshold: 0.1, // smaller threshold for tall sections
+            rootMargin: "0px 0px -20% 0px", // triggers earlier
+         },
       );
 
       sections.forEach((section) => observer.observe(section));
