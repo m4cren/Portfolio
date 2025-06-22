@@ -8,7 +8,11 @@ import useFrameProvider from "./lib/useFrameProvider";
 import Home from "./page";
 import { useActiveSection } from "./lib/contexts/ActiveSectionProvider";
 
-const Main = () => {
+interface MainProps {
+   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Main = ({ setIsLoading }: MainProps) => {
    const { activeSection } = useActiveSection();
    // const { camPos, camRot, cameraFunctions } = useCameraTools();
    // console.log(
@@ -57,7 +61,7 @@ const Main = () => {
 
    return (
       <div className="fixed top-0 left-0 right-0 inset-0 -z-10 ">
-         <Scene camPos={camPos} camRot={camRot} />
+         <Scene camPos={camPos} camRot={camRot} setIsLoading={setIsLoading} />
          {/* <div className="fixed bottom-0 left-0 right-0">
             <CameraControlls cameraFunctions={cameraFunctions} />
          </div> */}

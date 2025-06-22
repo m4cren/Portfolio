@@ -1,5 +1,7 @@
 import React from "react";
 import SocialButtons from "./SocialButtons";
+import Greet from "./Greet";
+import { motion } from "framer-motion";
 
 const HomeSection = () => {
    return (
@@ -9,10 +11,10 @@ const HomeSection = () => {
       >
          <div className="w-full px-8 md:px-18 lg:px-0 lg:w-[55%] h-full flex flex-col justify-center  gap-8 md:gap-10">
             <div className="flex flex-col gap-0 md:gap-2">
-               <h1 className="text-[2.8rem]! min-[350px]:text-5xl! md:text-7xl!">
+               <motion.h1 className="text-[2.8rem]! min-[350px]:text-5xl! md:text-7xl!">
                   Hi it's Rainier
-               </h1>
-               <h4>I'm a Website Developer</h4>
+               </motion.h1>
+               <Greet />
                <p className=" w-[95%] md:w-[60%] mt-4 md:mt-6">
                   A 2nd-year Computer Engineering student at Laguna State
                   Polytechnic University - San Pablo Laguna, passionate about

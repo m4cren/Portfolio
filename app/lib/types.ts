@@ -1,3 +1,6 @@
+import { z } from "zod";
+import { EmailSchema } from "./rules";
+
 export type CameraControlTypes = {
    cameraFunctions: {
       addPosX: () => void;
@@ -47,3 +50,5 @@ export type ProjectTypes = {
       others?: string[];
    };
 };
+
+export type FormTypes = z.infer<typeof EmailSchema>;

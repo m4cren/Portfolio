@@ -46,7 +46,7 @@ const SkillsSection = () => {
    return (
       <section
          id="skills"
-         className="h-[100vh] w-full flex  items-center justify-center snap-center"
+         className="h-[100vh] w-full flex pt-12 min-[390px]:pt-0 items-center justify-center snap-center"
       >
          <div className="flex flex-col-reverse gap-8 min-[350px]:gap-14 md:gap-24 lg:grid lg:grid-cols-2 w-[90vw]">
             {selectedTech ? (

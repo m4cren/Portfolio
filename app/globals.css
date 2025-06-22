@@ -1,4 +1,7 @@
 @import "tailwindcss";
+
+@plugin "daisyui";
+
 @theme {
    --color-softbutter: #f6f7dd;
    --color-leather: #a67c5b;
@@ -59,4 +62,15 @@ p {
    to {
       transform: translateY(100%);
    }
+}
+.typed-cursor {
+   display: inline-block;
+   vertical-align: middle;
+   font-size: inherit;
+   line-height: inherit;
+   margin-left: 2px;
+}
+
+strong {
+   @apply text-goldenbeige;
 }

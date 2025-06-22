@@ -1,24 +1,19 @@
 "use client";
-import {
-   Environment,
-   OrbitControls,
-   PerspectiveCamera,
-} from "@react-three/drei";
+import { Environment, PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 import Model from "../3d_components/Model";
 import CameraHandler from "../lib/CameraHandler";
-import { useEffect, useState } from "react";
-import { useActiveSection } from "../lib/contexts/ActiveSectionProvider";
 
 interface SceneProps {
    camPos: [number, number, number];
    camRot: [number, number, number];
+   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Scene = ({ camPos, camRot }: SceneProps) => {
+const Scene = ({ camPos, camRot, setIsLoading }: SceneProps) => {
    return (
-      <div className="fixed h-screen w-full">
+      <div className="fixed h-screen w-full bg-softbutter">
          <Canvas>
             <CameraHandler
                position={[camPos[0], camPos[1], camPos[2]]}
@@ -28,7 +23,7 @@ const Scene = ({ camPos, camRot }: SceneProps) => {
             <PerspectiveCamera makeDefault fov={85} />
             <ambientLight intensity={0.15} />
 
-            <Model />
+            <Model onLoadComplete={() => setIsLoading(false)} />
 
             <Environment preset="lobby" />
          </Canvas>

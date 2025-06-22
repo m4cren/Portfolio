@@ -235,7 +235,7 @@ export const projects: ProjectTypes[] = [
       github_repo: "https://github.com/m4cren/getlean",
       image_url: "getlean",
       video_url: "getlean",
-      link: "getlean.vercel.app",
+      link: "https://getlean.vercel.app",
       long_details:
          "GetLean is a personalized fitness coaching website built for a passionate gym coach. It offers tailored workout plans, progress tracking, and expert tips to help users achieve their fitness goals. Designed with a modern, responsive interface, the site focuses on simplicity, motivation, and results. Whether you're aiming to lose weight, build muscle, or maintain a healthy lifestyle, GetLean provides a structured path toward a fitter you.",
       tech_stack: {
@@ -251,7 +251,7 @@ export const projects: ProjectTypes[] = [
       github_repo: "https://github.com/m4cren/gamehub",
       image_url: "gamehub",
       video_url: "gamehub",
-      link: "play-game-hub.vercel.app",
+      link: "https://play-game-hub.vercel.app",
       long_details:
          "GameHub is a sleek and responsive platform that showcases a massive library of video games by integrating the RAWG.io API. Users can explore popular titles, view detailed game info, and discover new favorites — all in one place.",
       tech_stack: {

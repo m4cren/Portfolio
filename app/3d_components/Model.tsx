@@ -1,6 +1,15 @@
+"use client";
 import { useGLTF } from "@react-three/drei";
+import { useEffect } from "react";
 
-const Model = () => {
+interface ModelProps {
+   onLoadComplete: () => void;
+}
+const Model = ({ onLoadComplete }: ModelProps) => {
+   useEffect(() => {
+      onLoadComplete();
+   }, [onLoadComplete]);
+
    const { scene } = useGLTF("/models/workspace_compressed.glb");
    return <primitive object={scene} />;
 };

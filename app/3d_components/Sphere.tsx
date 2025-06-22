@@ -3,9 +3,11 @@
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh } from "three";
+import { useActiveSection } from "../lib/contexts/ActiveSectionProvider";
 
 const Sphere = () => {
    const meshRef = useRef<Mesh>(null);
+   const { screenWidth } = useActiveSection();
 
    // Animate rotation
    useFrame(() => {
@@ -17,7 +19,9 @@ const Sphere = () => {
 
    return (
       <mesh ref={meshRef}>
-         <sphereGeometry args={[2.5, 25, 25]} />
+         <sphereGeometry
+            args={screenWidth > 890 ? [2.5, 25, 25] : [3, 25, 25]}
+         />
          <meshStandardMaterial color={"#f6f7dd"} wireframe />
       </mesh>
    );
