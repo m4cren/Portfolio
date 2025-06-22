@@ -16,8 +16,10 @@ const ActiveSectionContexts = createContext<ActiveSectionProps | null>(null);
 
 const ActiveSectionContextProvider = ({
    children,
+   isLoading,
 }: {
    children: ReactNode;
+   isLoading: boolean;
 }) => {
    const [activeSection, setActiveSection] = useState<string>("");
    const [screenWidth, setScreenWidth] = useState<number>(0);
@@ -36,6 +38,7 @@ const ActiveSectionContextProvider = ({
    }, []);
 
    useEffect(() => {
+      if (isLoading) return;
       const sections = document.querySelectorAll("main section");
 
       const observer = new IntersectionObserver(
@@ -50,8 +53,8 @@ const ActiveSectionContextProvider = ({
          },
          {
             root: null,
-            threshold: 0.1, // smaller threshold for tall sections
-            rootMargin: "0px 0px -20% 0px", // triggers earlier
+            threshold: 0.1,
+            rootMargin: "0px 0px -20% 0px",
          },
       );
 
@@ -60,7 +63,7 @@ const ActiveSectionContextProvider = ({
       return () => {
          sections.forEach((section) => observer.unobserve(section));
       };
-   }, []);
+   }, [isLoading]);
 
    return (
       <ActiveSectionContexts.Provider value={{ activeSection, screenWidth }}>

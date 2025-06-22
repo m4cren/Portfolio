@@ -2,6 +2,7 @@
 import { projects } from "@/app/lib/constants";
 import { ProjectTypes } from "@/app/lib/types";
 import classNames from "classnames";
+import { useInView, motion } from "framer-motion";
 import {
    ArrowBigLeft,
    ChevronLeft,
@@ -12,15 +13,24 @@ import {
    Globe,
    Presentation,
 } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const ProjectsSection = () => {
+   const ref = useRef(null);
+   const isInView = useInView(ref, {
+      once: false,
+      margin: "-100px",
+   });
    const [selectedProject, setSelectedProject] = useState<ProjectTypes | null>(
       null,
    );
    return (
-      <section
+      <motion.section
          id="projects"
+         ref={ref}
+         initial={{ opacity: 0, y: "-15vh" }}
+         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
+         transition={{ duration: 0.9, ease: "easeOut" }}
          className={classNames(
             "h-fit lg:h-[100vh] w-full flex items-center  justify-center snap-start lg:snap-center ",
             {
@@ -45,11 +55,11 @@ const ProjectsSection = () => {
                   <button className="text-softbutter w-[8%] hidden lg:block">
                      <ChevronLeft size={65} opacity={0.7} />
                   </button>
-                  <ul className="grid grid-cols-1 gap-4 m-auto md:grid-cols-2 lg:flex lg:flex-row px-6 place-items-center w-[84%] md:gap-4 md:overflow-x-scroll lg:overflow-x-scroll pb-50 lg:pb-6 snap-mandatory">
+                  <ul className="grid grid-cols-1 gap-4  m-auto md:grid-cols-2 lg:flex lg:flex-row px-6 place-items-center md:w-[95%] lg:w-[84%] md:gap-8 md:overflow-x-scroll lg:overflow-x-scroll pb-50 lg:pb-6 snap-mandatory">
                      {projects.map((item, index) => (
                         <li
                            key={index}
-                           className="w-[18rem] flex flex-col items-center min-w-[18rem] h-[26rem] bg-gradient-to-t from-leather to-goldenbeige rounded-xl [box-shadow:0_0_4px_rgba(0,0,0,0.4)_inset]"
+                           className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] w-[18rem] flex flex-col items-center min-w-[18rem] h-[24rem] md:h-[26rem] bg-gradient-to-t from-leather to-goldenbeige rounded-xl [box-shadow:0_0_4px_rgba(0,0,0,0.4)_inset]"
                         >
                            <img
                               src={`/images/${item.image_url}.png`}
@@ -58,7 +68,7 @@ const ProjectsSection = () => {
                            />
                            <div className="flex flex-col items-center gap-2">
                               <h4>{item.label}</h4>
-                              <p className="text-center text-sm! w-[95%]">
+                              <p className="text-center text-xs! md:text-sm! w-[80%] md:w-[95%]">
                                  {item.short_description}
                               </p>
                            </div>
@@ -138,7 +148,7 @@ const ProjectsSection = () => {
                         </li>
                      )}
                   </ul>
-                  <div className="flex flex-col gap-4 bg-gradient-to-t from-leather to-goldenbeige rounded-lg [box-shadow:0_0_4px_rgba(0,0,0,0.4)_inset] px-4 py-6  w-[100%] lg:w-[90%] m-auto lg:m-0">
+                  <div className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] flex flex-col gap-4 bg-gradient-to-t from-leather to-goldenbeige rounded-lg [box-shadow:0_0_4px_rgba(0,0,0,0.4)_inset] px-4 py-6  w-[100%] lg:w-[90%] m-auto lg:m-0">
                      <h4>Technology Used</h4>
                      <hr className="text-softbutter opacity-40" />
                      <ul className="flex flex-col gap-6">
@@ -198,7 +208,7 @@ const ProjectsSection = () => {
                </div>
             </div>
          )}
-      </section>
+      </motion.section>
    );
 };
 

@@ -22,7 +22,7 @@ const Greet = () => {
       };
    }, []);
    return (
-      <h4 className="text-xl md:text-3xl text-goldenbeige leading-tight">
+      <h4 className="text-[1.2rem]! min-[350px]:text-lg! md:text-3xl! text-goldenbeige leading-tight">
          <span ref={ref} className="inline-block align-middle" />
       </h4>
    );

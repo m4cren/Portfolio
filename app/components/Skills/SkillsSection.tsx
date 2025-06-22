@@ -5,10 +5,11 @@ import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
 import { TechStackTypes } from "@/app/lib/types";
 import { Canvas } from "@react-three/fiber";
 import classNames from "classnames";
+import { useInView } from "framer-motion";
 import { Clock, Presentation } from "lucide-react";
 import Image from "next/image";
-import React, { useState } from "react";
-
+import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
 const buttons = {
    upper: ["Languages", "Libraries", "Frameworks"],
    lower: ["Databases", "Tools"],
@@ -42,11 +43,20 @@ const SkillsSection = () => {
    const [selectedTech, setSelectedTech] = useState<TechStackTypes | null>(
       null,
    );
+   const ref = useRef(null);
+   const isInView = useInView(ref, {
+      once: false,
+      margin: "-100px",
+   });
 
    return (
-      <section
+      <motion.section
+         ref={ref}
+         initial={{ opacity: 0, y: "-15vh" }}
+         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
+         transition={{ duration: 0.9, ease: "easeOut" }}
          id="skills"
-         className="h-[100vh] w-full flex pt-12 min-[390px]:pt-0 items-center justify-center snap-center"
+         className="h-[100vh] w-full flex pt-30 min-[390px]:pt-0 items-center justify-center snap-center"
       >
          <div className="flex flex-col-reverse gap-8 min-[350px]:gap-14 md:gap-24 lg:grid lg:grid-cols-2 w-[90vw]">
             {selectedTech ? (
@@ -68,7 +78,7 @@ const SkillsSection = () => {
                         {selectedTech.description}
                      </p>
                   </div>
-                  <div className="flex flex-col gap-0 md:gap-2">
+                  <div className="flex flex-col gap-2">
                      <span className="text-softbutter  flex flex-row items-center gap-2 ">
                         <Clock size={20} />{" "}
                         <p className="font-light! text-xs! lg:text-[1rem]!">
@@ -117,7 +127,7 @@ const SkillsSection = () => {
                            >
                               {item}
                               {selectedCategory.upper === item && (
-                                 <span className="hover-animation absolute bottom-[-3px] left-0 right-0 h-[3px] rounded-md bg-gradient-to-t from-leather to-goldenbeige"></span>
+                                 <span className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] hover-animation absolute bottom-[-3px] left-0 right-0 h-[3px] rounded-md bg-gradient-to-t from-leather to-goldenbeige"></span>
                               )}
                            </button>
                         ))}
@@ -166,7 +176,7 @@ const SkillsSection = () => {
                            >
                               {item}
                               {selectedCategory.lower === item && (
-                                 <span className="hover-animation absolute bottom-[-3px] left-0 right-0 h-[3px] rounded-md bg-gradient-to-t from-leather to-goldenbeige"></span>
+                                 <span className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] hover-animation absolute bottom-[-3px] left-0 right-0 h-[3px] rounded-md bg-gradient-to-t from-leather to-goldenbeige"></span>
                               )}
                            </button>
                         ))}
@@ -200,7 +210,7 @@ const SkillsSection = () => {
                </div>
             </div>
          </div>
-      </section>
+      </motion.section>
    );
 };
 

@@ -4,6 +4,7 @@ import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
 import classNames from "classnames";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface ToggleMenuProps {
    isMenuToggle: boolean;
@@ -16,16 +17,22 @@ const NavBar = ({
    handleClosing,
 }: ToggleMenuProps) => {
    const { activeSection } = useActiveSection();
+   console.log(activeSection);
 
    return (
-      <nav className="sticky top-0 left-0 right-0 flex flex-row justify-between px-4 md:px-12 py-4  md:py-6 items-center">
+      <motion.nav
+         initial={{ y: -50, opacity: 0 }}
+         animate={{ y: 0, opacity: 1 }}
+         transition={{ duration: 0.9 }}
+         className="sticky top-0 left-0 right-0 flex flex-row justify-between px-4 md:px-12 py-4  md:py-6 items-center"
+      >
          <div>
             <Image
                src={"/images/Profile.jpg"}
                alt="Rainier"
                width={60}
                height={60}
-               className="w-[4rem] h-[4rem] md:w-[5rem] md:h-[5rem] [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] rounded-full border-2 border-leather p-1"
+               className="w-[3.5rem] h-[3.5rem]  md:w-[5rem] md:h-[5rem] [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] rounded-full border-2 border-leather p-1"
             />
          </div>
          <ul className="flex flex-row items-center  lg:w-[80%] xl:w-[50%] justify-around ">
@@ -48,7 +55,7 @@ const NavBar = ({
                </li>
             ))}
             <div className="flex flex-row gap-6">
-               <button className="flex  flex-row items-center gap-2 justify-center px-3 md:px-6 text-sm md:text-lg py-0 md:py-[5px] rounded-lg text-softbutter font-medium bg-gradient-to-t from-leather to-goldenbeige [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] hover:from-transparent hover:to-transparent hover:border-2 hover:text-goldenbeige hover:border-goldenbeige! transition-all duration-150 cursor-pointer ">
+               <button className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] flex  flex-row items-center gap-2 justify-center px-3 md:px-6 text-sm md:text-lg py-0 md:py-[5px] rounded-lg text-softbutter font-medium bg-gradient-to-t from-leather to-goldenbeige [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] hover:from-transparent hover:to-transparent hover:border-2 hover:text-goldenbeige hover:border-goldenbeige! transition-all duration-150 cursor-pointer ">
                   <a href="https://github.com/m4cren" target="_blank">
                      Github
                   </a>
@@ -77,7 +84,7 @@ const NavBar = ({
                )}
             </div>
          </ul>
-      </nav>
+      </motion.nav>
    );
 };
 

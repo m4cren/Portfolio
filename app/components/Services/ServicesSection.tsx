@@ -1,3 +1,5 @@
+"use client";
+import { useInView } from "framer-motion";
 import {
    Figma,
    Box,
@@ -5,7 +7,8 @@ import {
    Server,
    LucideIcon,
 } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
+import { motion } from "framer-motion";
 
 const itemMap: { [key: string]: LucideIcon } = {
    figma: Figma,
@@ -42,12 +45,21 @@ const skillCards: { icon: string; title: string; description: string }[] = [
 ];
 
 const ServicesSection = () => {
+   const ref = useRef(null);
+   const isInView = useInView(ref, {
+      once: false,
+      margin: "-100px",
+   });
    return (
-      <section
+      <motion.section
+         ref={ref}
+         initial={{ opacity: 0, y: "-15vh" }}
+         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
+         transition={{ duration: 0.9, ease: "easeOut" }}
          id="service"
          className="h-[100vh] w-full flex flex-col items-center justify-center gap-4 min-[350px]:gap-8 md:gap-12 lg:gap-18  snap-center"
       >
-         <div className="flex flex-col items-center md:gap-2">
+         <div className="mt-20 min-[350px]:mt-0 flex flex-col items-center md:gap-2">
             <h1 className=" text-3xl! min-[350px]:text-4xl! md:text-5xl!">
                What I Provide
             </h1>
@@ -63,12 +75,12 @@ const ServicesSection = () => {
                   <li
                      key={index}
                      style={{ boxShadow: "-2px 2px 4px rgba(0,0,0,0.4)" }}
-                     className="flex flex-col justify-center items-center gap-5 md:gap-6 lg:gap-8 px-4  bg-gradient-to-t from-leather to-goldenbeige rounded-lg [box-shadow:0_0_7px_rgba(0,0,0,0.3)_inset] w-[9rem] h-[10rem] min-[350px]:w-[10rem] min-[350px]:h-[12rem] md:w-[16rem] md:h-[20rem] lg:w-[18rem] lg:h-[24rem]"
+                     className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] flex flex-col justify-center items-center gap-5 md:gap-6 lg:gap-8 px-4  bg-gradient-to-t from-leather to-goldenbeige rounded-lg [box-shadow:0_0_7px_rgba(0,0,0,0.3)_inset] w-[9rem] h-[10rem] min-[350px]:w-[10rem] min-[350px]:h-[12rem] md:w-[16rem] md:h-[20rem] lg:w-[18rem] lg:h-[24rem]"
                   >
                      <i className="text-softbutter scale-150 min-[350px]:scale-200">
                         <IconComponent />
                      </i>
-                     <h2 className="text-center text-lg! leading-5 min-[350px]:leading-6 min-[350px]:text-xl! md:text-2xl! lg:text-3xl!">
+                     <h2 className="text-center text-[1rem]! font-medium! min-[250px]:font-bold leading-5 min-[350px]:leading-6 min-[350px]:text-xl! md:text-2xl! lg:text-3xl!">
                         {title}
                      </h2>
                      <p className="hidden md:block md:text-[0.8rem]! lg:text-[0.92rem]! text-center">
@@ -78,7 +90,7 @@ const ServicesSection = () => {
                );
             })}
          </ul>
-      </section>
+      </motion.section>
    );
 };
 

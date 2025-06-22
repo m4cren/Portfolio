@@ -22,13 +22,13 @@ const ToggleMenu = ({
       <div
          style={{ boxShadow: "0px 3px 8px rgba(0,0,0,0.5)" }}
          className={classNames(
-            "open-menu-animation lg:hidden fixed bottom-0 right-0 left-0 z-[8] h-[50vh] md:h-[38vh] rounded-t-4xl bg-gradient-to-t from-leather to-goldenbeige [box-shadow:0_0_4px_rgba(0,0,0,0.3)_inset]",
+            "[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] open-menu-animation lg:hidden fixed bottom-0 right-0 left-0 z-[8] h-[50vh] md:h-[38vh] rounded-t-4xl bg-gradient-to-t from-leather to-goldenbeige [box-shadow:0_0_4px_rgba(0,0,0,0.3)_inset]",
             {
                "close-menu-animation": isClosing,
             },
          )}
       >
-         <ul className="flex flex-col items-center  min-[310px]:mt-8 min-[400px]:mt-12 min-[310px]:gap-5 min-[400px]:gap-8 md:gap-10">
+         <ul className="flex flex-col items-center mt-6  min-[310px]:mt-8 min-[400px]:mt-12 gap-4 min-[350px]:gap-5 min-[400px]:gap-8 md:gap-10">
             {links.map((link, index) => (
                <li key={index}>
                   <p
@@ -45,7 +45,7 @@ const ToggleMenu = ({
                </li>
             ))}
          </ul>
-         <p className="absolute bottom-2 min-[390px]:bottom-10 md:bottom-6 left-0 right-0 text-softbutter/65! font-light! text-xs! md:text-sm! text-center">
+         <p className="absolute bottom-2 min-[390px]:bottom-10 md:bottom-6 left-0 right-0 text-softbutter/65! font-light! text-[0.7rem]! min-[350px]:text-xs! md:text-sm! text-center">
             © 2025 Rainier Reyes. Built with Next.js, React Three Fiber &
             Tailwind.
          </p>

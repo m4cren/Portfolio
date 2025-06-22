@@ -10,7 +10,7 @@ const Model = ({ onLoadComplete }: ModelProps) => {
       onLoadComplete();
    }, [onLoadComplete]);
 
-   const { scene } = useGLTF("/models/workspace_compressed.glb");
+   const { scene } = useGLTF("/models/compressed_workspace.glb");
    return <primitive object={scene} />;
 };
 
