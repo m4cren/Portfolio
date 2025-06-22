@@ -10,6 +10,7 @@ import ProjectsSection from "./components/Projects/ProjectsSection";
 import ServicesSection from "./components/Services/ServicesSection";
 import SkillsSection from "./components/Skills/SkillsSection";
 import useToggleMenu from "./lib/hooks/useToggleMenu";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
    const { handleClosing, handleToggle, isClosing, isToggleMenu } =
@@ -38,6 +39,7 @@ export default function Home() {
             <SkillsSection />
             <ProjectsSection />
             <ContactsSection />
+            <Footer />
          </main>
          {isToggleMenu && (
             <ToggleMenu

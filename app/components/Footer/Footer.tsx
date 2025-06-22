@@ -1,0 +1,64 @@
+import { Linkedin, Mail, Phone } from "lucide-react";
+
+const Footer = () => {
+   return (
+      <footer className="fixed opacity-60 bottom-0 left-0 right-0 h-[9rem] flex flex-col md:flex-row justify-end md:justify-between px-2 md:px-12 items-center md:items-end pb-4 ">
+         <div className="hidden lg:block ">
+            <p className="text-sm!">
+               Marc Rainier S. Reyes | Website Developer
+            </p>
+            <p className="text-sm!">
+               Bringing ideas to life with modern web tech
+            </p>
+         </div>
+         <ul className="flex flex-row items-end justify-between w-full pb-3 px-1 md:hidden">
+            <div className="flex flex-col gap-1">
+               <li className=" text-softbutter flex flex-row gap-1  items-center">
+                  <Phone size={12} />{" "}
+                  <p className="text-[0.65rem]! md:text-sm! lg:text-md!">
+                     +639618137972
+                  </p>
+               </li>
+               <li className=" text-softbutter flex flex-row gap-1  items-center">
+                  <Mail size={12} />{" "}
+                  <p className="text-[0.65rem]! md:text-sm! lg:text-md!">
+                     renrenofficial@gmail.com
+                  </p>
+               </li>
+            </div>
+            <div>
+               {" "}
+               <li className=" text-softbutter flex flex-row  gap-1 items-center">
+                  <Linkedin size={15} />{" "}
+                  <p className="text-[0.65rem]! md:text-sm! lg:text-md!">
+                     in/rainier-reyes-a71867336
+                  </p>
+               </li>
+            </div>
+         </ul>
+         <div>
+            <p className="text-[0.65rem]! md:text-sm! lg:text-md!">
+               © 2025 Rainier Reyes. Built with Next.js, React Three Fiber &
+               Tailwind.
+            </p>
+         </div>
+         <ul className="hidden md:flex flex-col gap-2">
+            <li className=" text-softbutter flex flex-row gap-2 items-center">
+               <Phone /> <p className="text-sm! lg:text-md!">+639618137972</p>
+            </li>
+            <li className=" text-softbutter flex flex-row gap-2 items-center">
+               <Mail />{" "}
+               <p className="text-sm! lg:text-md!">renrenofficial@gmail.com</p>
+            </li>
+            <li className=" text-softbutter flex flex-row gap-2 items-center">
+               <Linkedin />{" "}
+               <p className="text-sm! lg:text-md!">
+                  in/rainier-reyes-a71867336
+               </p>
+            </li>
+         </ul>
+      </footer>
+   );
+};
+
+export default Footer;
