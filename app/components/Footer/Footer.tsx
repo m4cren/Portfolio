@@ -15,7 +15,7 @@ const Footer = () => {
          initial={{ opacity: 0, y: "-15vh" }}
          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 0 }}
          transition={{ duration: 0.9, ease: "easeOut" }}
-         className="fixed opacity-60! bottom-0 left-0 right-0 h-[7rem] md:h-[9rem] flex flex-col md:flex-row justify-end md:justify-between px-2 md:px-12 items-center md:items-end p-2 md:pb-4 "
+         className="fixed pointer-events-none opacity-60! bottom-0 left-0 right-0 h-[7rem] md:h-[9rem] flex flex-col md:flex-row justify-end md:justify-between px-2 md:px-12 items-center md:items-end p-2 md:pb-4 "
       >
          <div className="hidden lg:block ">
             <p className="text-sm!">

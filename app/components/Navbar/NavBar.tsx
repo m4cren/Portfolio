@@ -5,6 +5,7 @@ import classNames from "classnames";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import SelectedItemLine from "../SelectedItemLine";
 
 interface ToggleMenuProps {
    isMenuToggle: boolean;
@@ -17,7 +18,6 @@ const NavBar = ({
    handleClosing,
 }: ToggleMenuProps) => {
    const { activeSection } = useActiveSection();
-   console.log(activeSection);
 
    return (
       <motion.nav
@@ -48,9 +48,7 @@ const NavBar = ({
                   >
                      {" "}
                      <a href={`#${link?.value}`}>{link?.label}</a>
-                     {activeSection === link?.value && (
-                        <span className="hover-animation absolute bottom-[-3px] left-0 right-0 h-[3px] rounded-md bg-gradient-to-t from-leather to-goldenbeige"></span>
-                     )}
+                     {activeSection === link?.value && <SelectedItemLine />}
                   </p>
                </li>
             ))}

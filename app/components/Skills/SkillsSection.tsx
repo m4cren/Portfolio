@@ -2,7 +2,7 @@
 import AnimatedSphere from "@/app/3d_components/Sphere";
 import { techStack } from "@/app/lib/constants";
 import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
-import { TechStackTypes } from "@/app/lib/types";
+import { SkillCategoryTypes, TechStackTypes } from "@/app/lib/types";
 import { Canvas } from "@react-three/fiber";
 import classNames from "classnames";
 import { useInView } from "framer-motion";
@@ -10,6 +10,8 @@ import { Clock, Presentation } from "lucide-react";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import SkillList from "./SkillList";
+import CategoryButton from "./CategoryButton";
 const buttons = {
    upper: ["Languages", "Libraries", "Frameworks"],
    lower: ["Databases", "Tools"],
@@ -17,13 +19,12 @@ const buttons = {
 
 const SkillsSection = () => {
    const { screenWidth } = useActiveSection();
-   const [selectedCategory, setSelectedCategory] = useState<{
-      upper: "Languages" | "Libraries" | "Frameworks";
-      lower: "Databases" | "Tools";
-   }>({
-      upper: "Languages",
-      lower: "Databases",
-   });
+   const [selectedCategory, setSelectedCategory] = useState<SkillCategoryTypes>(
+      {
+         upper: "Languages",
+         lower: "Databases",
+      },
+   );
 
    const handleChangeCategory = (category: any, section: "upper" | "lower") => {
       if (section === "upper") {
@@ -111,99 +112,47 @@ const SkillsSection = () => {
                <div className="flex flex-col gap-4 min-[350px]:gap-6 md:gap-12">
                   <div className="flex flex-col gap-4 md:gap-6">
                      <div className="flex flex-row items-center gap-8 justify-center md:justify-start  md:gap-22">
-                        {buttons.upper.map((item) => (
-                           <button
-                              key={item}
-                              onClick={() => {
-                                 handleChangeCategory(item, "upper");
-                              }}
-                              className={classNames(
-                                 "relative text-md md:text-2xl text-softbutter font-medium hover:text-goldenbeige transition-all duration-150 cursor-pointer",
-                                 {
-                                    "text-goldenbeige!":
-                                       selectedCategory.upper === item,
-                                 },
-                              )}
-                           >
-                              {item}
-                              {selectedCategory.upper === item && (
-                                 <span className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] hover-animation absolute bottom-[-3px] left-0 right-0 h-[3px] rounded-md bg-gradient-to-t from-leather to-goldenbeige"></span>
-                              )}
-                           </button>
+                        {buttons.upper.map((item, index) => (
+                           <CategoryButton
+                              choose="upper"
+                              handleChangeCategory={handleChangeCategory}
+                              item={item}
+                              selectedCategory={selectedCategory}
+                              key={index}
+                           />
                         ))}
                      </div>
                      <ul className="flex flex-row items-center gap-6 min-[350px]:gap-8 justify-center md:justify-start md:gap-14">
                         {filteredUpper.map((item, index) => (
-                           <li
+                           <SkillList
                               key={index}
-                              onPointerEnter={() => setSelectedTech(item)}
-                              onPointerLeave={() => {
-                                 if (screenWidth > 890) {
-                                    setSelectedTech(null);
-                                 }
-                              }}
-                              className="flex flex-col items-center cursor-pointer"
-                           >
-                              <Image
-                                 src={`/icons/${item.icon}.png`}
-                                 alt={item.icon}
-                                 width={35}
-                                 height={35}
-                                 className="drop-shadow-md w-8 h-8 md:w-10 md:h-10 object-contain"
-                              />
-                              <p className="text-xs! md:text-lg!">
-                                 {item.label}
-                              </p>
-                           </li>
+                              item={item}
+                              screenWidth={screenWidth}
+                              setSelectedTech={setSelectedTech}
+                           />
                         ))}
                      </ul>
                   </div>
                   <div className="flex flex-col  gap-4 md:gap-6">
                      <div className="flex flex-row items-center gap-8 justify-center md:justify-start md:gap-22">
-                        {buttons.lower.map((item) => (
-                           <button
-                              key={item}
-                              onClick={() => {
-                                 handleChangeCategory(item, "lower");
-                              }}
-                              className={classNames(
-                                 "relative  text-md md:text-2xl text-softbutter font-medium hover:text-goldenbeige transition-all duration-150 cursor-pointer",
-                                 {
-                                    "text-goldenbeige!":
-                                       selectedCategory.lower === item,
-                                 },
-                              )}
-                           >
-                              {item}
-                              {selectedCategory.lower === item && (
-                                 <span className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] hover-animation absolute bottom-[-3px] left-0 right-0 h-[3px] rounded-md bg-gradient-to-t from-leather to-goldenbeige"></span>
-                              )}
-                           </button>
+                        {buttons.lower.map((item, index) => (
+                           <CategoryButton
+                              choose="lower"
+                              handleChangeCategory={handleChangeCategory}
+                              item={item}
+                              selectedCategory={selectedCategory}
+                              key={index}
+                           />
                         ))}
                      </div>
                      <ul className="flex flex-row items-center gap-6 min-[350px]:gap-8 justify-center md:justify-start md:gap-14">
                         {filteredLower.map((item, index) => (
-                           <li
+                           <SkillList
                               key={index}
-                              onPointerLeave={() => {
-                                 if (screenWidth > 890) {
-                                    setSelectedTech(null);
-                                 }
-                              }}
-                              onPointerEnter={() => setSelectedTech(item)}
-                              className="flex flex-col items-center cursor-pointer"
-                           >
-                              <Image
-                                 src={`/icons/${item.icon}.png`}
-                                 alt={item.icon}
-                                 width={35}
-                                 height={35}
-                                 className="drop-shadow-md w-8 h-8 md:w-10 md:h-10 object-contain"
-                              />
-                              <p className="text-xs! md:text-lg!">
-                                 {item.label}
-                              </p>
-                           </li>
+                              item={item}
+                              screenWidth={screenWidth}
+                              setSelectedTech={setSelectedTech}
+                           />
                         ))}
                      </ul>
                   </div>

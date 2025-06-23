@@ -6,11 +6,12 @@ interface ModelProps {
    onLoadComplete: () => void;
 }
 const Model = ({ onLoadComplete }: ModelProps) => {
-   useEffect(() => {
-      onLoadComplete();
-   }, [onLoadComplete]);
+   const { scene } = useGLTF("/models/compressed_workspace.glb", true);
 
-   const { scene } = useGLTF("/models/compressed_workspace.glb");
+   useEffect(() => {
+      if (scene) onLoadComplete();
+   }, [scene, onLoadComplete]);
+
    return <primitive object={scene} />;
 };
 

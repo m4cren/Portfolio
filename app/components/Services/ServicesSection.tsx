@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { ServiceTypes } from "@/app/lib/types";
+import ServiceCard from "./ServiceCard";
 
 const itemMap: { [key: string]: LucideIcon } = {
    figma: Figma,
@@ -17,7 +19,7 @@ const itemMap: { [key: string]: LucideIcon } = {
    backend: Server,
 };
 
-const skillCards: { icon: string; title: string; description: string }[] = [
+const skillCards: ServiceTypes[] = [
    {
       icon: "figma",
       title: "UI / UX Design",
@@ -69,24 +71,14 @@ const ServicesSection = () => {
             </p>
          </div>
          <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {skillCards.map(({ description, icon, title }, index) => {
-               const IconComponent = itemMap[icon];
+            {skillCards.map((item, index) => {
+               const IconComponent = itemMap[item.icon];
                return (
-                  <li
+                  <ServiceCard
                      key={index}
-                     style={{ boxShadow: "-2px 2px 4px rgba(0,0,0,0.4)" }}
-                     className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] flex flex-col justify-center items-center gap-5 md:gap-6 lg:gap-8 px-4  bg-gradient-to-t from-leather to-goldenbeige rounded-lg [box-shadow:0_0_7px_rgba(0,0,0,0.3)_inset] w-[9rem] h-[10rem] min-[350px]:w-[10rem] min-[350px]:h-[12rem] md:w-[16rem] md:h-[20rem] lg:w-[18rem] lg:h-[24rem]"
-                  >
-                     <i className="text-softbutter scale-150 min-[350px]:scale-200">
-                        <IconComponent />
-                     </i>
-                     <h2 className="text-center text-[1rem]! font-medium! min-[250px]:font-bold leading-5 min-[350px]:leading-6 min-[350px]:text-xl! md:text-2xl! lg:text-3xl!">
-                        {title}
-                     </h2>
-                     <p className="hidden md:block md:text-[0.8rem]! lg:text-[0.92rem]! text-center">
-                        {description}
-                     </p>
-                  </li>
+                     IconComponent={IconComponent}
+                     item={item}
+                  />
                );
             })}
          </ul>

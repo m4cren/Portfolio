@@ -33,7 +33,7 @@ const Main = ({ setIsLoading }: MainProps) => {
       init_Frame.rot[1],
       init_Frame.rot[2],
    ]);
-   console.log(activeSection);
+
    useEffect(() => {
       switch (activeSection) {
          case "home":
