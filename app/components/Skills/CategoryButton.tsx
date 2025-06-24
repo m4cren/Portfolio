@@ -1,7 +1,6 @@
-import classNames from "classnames";
-import React from "react";
-import SelectedItemLine from "../SelectedItemLine";
 import { SkillCategoryTypes } from "@/app/lib/types";
+import classNames from "classnames";
+import SelectedItemLine from "../SelectedItemLine";
 
 interface CategoryButtonProps {
    handleChangeCategory: (item: string, cat: "upper" | "lower") => void;

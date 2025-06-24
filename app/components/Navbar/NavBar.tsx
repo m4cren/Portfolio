@@ -2,9 +2,9 @@
 import { links } from "@/app/lib/constants";
 import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
 import classNames from "classnames";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import SelectedItemLine from "../SelectedItemLine";
 
 interface ToggleMenuProps {

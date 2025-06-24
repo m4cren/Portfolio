@@ -1,12 +1,9 @@
 "use client";
 
-import Scene from "./scene/Scene";
-import useCameraTools from "./lib/hooks/useCameraTools";
-import CameraControlls from "./lib/CameraControls";
 import { useEffect, useState } from "react";
-import useFrameProvider from "./lib/useFrameProvider";
-import Home from "./page";
 import { useActiveSection } from "./lib/contexts/ActiveSectionProvider";
+import useFrameProvider from "./lib/useFrameProvider";
+import Scene from "./scene/Scene";
 
 interface MainProps {
    setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -14,13 +11,7 @@ interface MainProps {
 
 const Main = ({ setIsLoading }: MainProps) => {
    const { activeSection } = useActiveSection();
-   // const { camPos, camRot, cameraFunctions } = useCameraTools();
-   // console.log(
-   //    `Cam Pos: PX - ${camPos[0]}    PY - ${camPos[1]}    PZ - ${camPos[2]}`,
-   // );
-   // console.log(
-   //    `Cam Rot: RX - ${camRot[0]}    RY - ${camRot[1]}    RZ - ${camRot[2]}`,
-   // );
+
    const { init_Frame, to_contact, to_projects, to_service, to_skilss } =
       useFrameProvider();
    const [camPos, setCamPos] = useState<[number, number, number]>([
@@ -62,9 +53,6 @@ const Main = ({ setIsLoading }: MainProps) => {
    return (
       <div className="fixed top-0 left-0 right-0 inset-0 -z-10 ">
          <Scene camPos={camPos} camRot={camRot} setIsLoading={setIsLoading} />
-         {/* <div className="fixed bottom-0 left-0 right-0">
-            <CameraControlls cameraFunctions={cameraFunctions} />
-         </div> */}
       </div>
    );
 };

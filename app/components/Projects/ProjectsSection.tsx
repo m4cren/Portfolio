@@ -7,11 +7,10 @@ import { useRef, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper/modules"; // optional modules
+import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ProjectCard from "./ProjectCard";
 import SelectedProject from "./SelectedProject";
-import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
 
 const ProjectsSection = () => {
    const ref = useRef(null);

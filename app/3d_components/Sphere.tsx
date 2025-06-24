@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 import { Mesh } from "three";
 import { useActiveSection } from "../lib/contexts/ActiveSectionProvider";
 

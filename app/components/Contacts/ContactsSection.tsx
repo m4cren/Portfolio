@@ -1,9 +1,8 @@
 "use client";
 
-import { useInView, motion } from "framer-motion";
-import { CheckCircle, Send } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 import { useRef, useState } from "react";
-import { useForm } from "react-hook-form";
 import Footer from "../Footer/Footer";
 import EmailForm from "./EmailForm";
 

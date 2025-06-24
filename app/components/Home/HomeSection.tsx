@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import SocialButtons from "./SocialButtons";
-import Greet from "./Greet";
 import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Greet from "./Greet";
+import SocialButtons from "./SocialButtons";
 
 const HomeSection = () => {
    const ref = useRef(null);
@@ -35,14 +35,30 @@ const HomeSection = () => {
             </div>
             <div className="flex flex-col-reverse lg:flex-row items-start  lg:items-center gap-6 md:gap-10">
                <div className="flex flex-row items-center gap-4">
-                  <button className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] bg-gradient-to-t from-leather to-goldenbeige  cursor-pointer text-softbutter [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] font-medium text-sm md:text-lg rounded-lg px-10 py-2">
-                     <a href="/Rainier_Reyes_resume.pdf" download>
+                  <button className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] py-2 bg-gradient-to-t from-leather to-goldenbeige  cursor-pointer text-softbutter [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] font-medium text-sm md:text-lg rounded-lg">
+                     <a
+                        href="/Rainier_Reyes_resume.pdf"
+                        className="w-full px-6 md:px-10"
+                        download
+                     >
                         Download Resume
                      </a>
                   </button>
-                  <button className="cursor-pointer text-goldenbeige [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] outline-2 outline-goldenbeige -outline-offset-2 font-medium text-sm md:text-lg rounded-lg px-6 py-2">
-                     <a href="#contact"> Hire Me</a>
-                  </button>
+
+                  <a
+                     href="#contact"
+                     className="inline-block  rounded-lg px-6 py-2 text-goldenbeige text-sm md:text-lg font-medium border-2 border-goldenbeige shadow-[0_4px_6px_rgba(0,0,0,0.4)]"
+                     style={{
+                        WebkitMaskImage:
+                           "-webkit-radial-gradient(white, black)",
+                        WebkitTapHighlightColor: "transparent",
+                        WebkitBackfaceVisibility: "hidden",
+                        backfaceVisibility: "hidden",
+                        transform: "translateZ(0)", // Forces GPU rendering
+                     }}
+                  >
+                     Hire Me
+                  </a>
                </div>
                <div className="flex flex-row gap-8 items-center pl-1 md:pl-2 lg:pl-0">
                   <SocialButtons />

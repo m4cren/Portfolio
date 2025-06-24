@@ -270,7 +270,7 @@ export const projects: ProjectTypes[] = [
       video_url: "issue-tracker",
 
       long_details:
-         "This project is designed to enhance my skills in modern web development using Next.js. It focuses on building a clean, user-friendly interface for managing issues and tasks. Key features include API integration, efficient data fetching, pagination, infinite scrolling, and advanced filtering methods. It also helped strengthen my understanding of component structure, dynamic routing, and state management in real-world applications.",
+         "This project is designed to enhance my skills in modern web development using Next.js. It focuses on building a clean, user-friendly interface for managing issues and tasks. Key features include efficient data fetching, pagination, infinite scrolling, and advanced filtering methods. It also helped strengthen my understanding of component structure, dynamic routing, and state management in real-world applications.",
       tech_stack: {
          frontend: [
             "NextJs",

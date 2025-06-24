@@ -9,9 +9,8 @@ import ToggleMenu from "./components/Navbar/ToggleMenu";
 import ProjectsSection from "./components/Projects/ProjectsSection";
 import ServicesSection from "./components/Services/ServicesSection";
 import SkillsSection from "./components/Skills/SkillsSection";
-import useToggleMenu from "./lib/hooks/useToggleMenu";
-import Footer from "./components/Footer/Footer";
 import ActiveSectionContextProvider from "./lib/contexts/ActiveSectionProvider";
+import useToggleMenu from "./lib/hooks/useToggleMenu";
 
 export default function Home() {
    const { handleClosing, handleToggle, isClosing, isToggleMenu } =

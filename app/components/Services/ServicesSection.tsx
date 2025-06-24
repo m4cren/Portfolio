@@ -1,15 +1,14 @@
 "use client";
-import { useInView } from "framer-motion";
+import { ServiceTypes } from "@/app/lib/types";
+import { motion, useInView } from "framer-motion";
 import {
-   Figma,
    Box,
    ChevronsLeftRight,
-   Server,
+   Figma,
    LucideIcon,
+   Server,
 } from "lucide-react";
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
-import { ServiceTypes } from "@/app/lib/types";
+import { useRef } from "react";
 import ServiceCard from "./ServiceCard";
 
 const itemMap: { [key: string]: LucideIcon } = {
@@ -24,7 +23,7 @@ const skillCards: ServiceTypes[] = [
       icon: "figma",
       title: "UI / UX Design",
       description:
-         "I use Figma to plan and prototype interfaces before development, helping ensure a smoother workflow and better user experience. My designs prioritize both usability and engagement while maintaining a clean, modern look.",
+         "I use Figma to plan and prototype interfaces before development, helping ensure a smoother workflow and better user experience.",
    },
    {
       icon: "blender",
@@ -42,7 +41,7 @@ const skillCards: ServiceTypes[] = [
       icon: "backend",
       title: "Backend Development",
       description:
-         "I build scalable server-side logic and APIs to ensure smooth and reliable performance behind the scenes. I also integrate payment solutions like the PayMongo API to enable secure and seamless online transactions.",
+         "I build scalable backend systems and APIs for smooth performance, and integrate secure payments using the PayMongo API.",
    },
 ];
 

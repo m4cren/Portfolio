@@ -1,5 +1,5 @@
 "use client";
-import { useInView, motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Linkedin, Mail, Phone } from "lucide-react";
 import { useRef } from "react";
 

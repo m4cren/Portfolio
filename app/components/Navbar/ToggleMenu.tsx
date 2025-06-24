@@ -1,9 +1,8 @@
 "use client";
 import { links } from "@/app/lib/constants";
 import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
-import { motion } from "framer-motion";
 import classNames from "classnames";
-import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 interface ToggleMenuProps {
    handleToggle: () => void;
@@ -38,9 +37,9 @@ const ToggleMenu = ({
                      exit={{ x: 269, opacity: 0 }}
                      transition={{
                         type: "spring",
-                        stiffness: 300, // more stiffness = snappier
-                        damping: 20, // less damping = faster stop
-                        mass: 0.4, // lower = less inertia
+                        stiffness: 300,
+                        damping: 20,
+                        mass: 0.4,
                         delay: index * 0.12,
                      }}
                      onClick={handleClosing}

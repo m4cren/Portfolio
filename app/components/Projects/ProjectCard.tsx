@@ -1,6 +1,6 @@
 import { ProjectTypes } from "@/app/lib/types";
 import { Eye } from "lucide-react";
-import React from "react";
+import Image from "next/image";
 
 interface ProjectCardProps {
    item: ProjectTypes;
@@ -11,9 +11,11 @@ interface ProjectCardProps {
 const ProjectCard = ({ item, handleSelectedProject }: ProjectCardProps) => {
    return (
       <li className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] w-[18rem] flex flex-col items-center min-w-[18rem] h-[24rem] md:h-[26rem] bg-gradient-to-t from-leather to-goldenbeige rounded-xl [box-shadow:0_0_4px_rgba(0,0,0,0.4)_inset]">
-         <img
+         <Image
             src={`/images/${item.image_url}.png`}
             alt="metafeast"
+            width={500}
+            height={500}
             className="w-[90%] -mb-4"
          />
          <div className="flex flex-col items-center gap-2">

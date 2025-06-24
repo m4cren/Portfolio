@@ -1,6 +1,5 @@
-import React from "react";
 import { IconType } from "react-icons";
-import { FaFacebook, FaTiktok, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 
 const iconMap: { [key: string]: IconType } = {
    facebook: FaFacebook,

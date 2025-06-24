@@ -1,6 +1,5 @@
 import { ProjectTypes } from "@/app/lib/types";
 import { ArrowBigLeft, Clock, Github, Globe, Presentation } from "lucide-react";
-import React from "react";
 
 interface SelectedProjectProps {
    handleBack: () => void;
