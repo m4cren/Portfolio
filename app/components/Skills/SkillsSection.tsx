@@ -3,12 +3,15 @@ import AnimatedSphere from "@/app/3d_components/Sphere";
 import { techStack } from "@/app/lib/constants";
 import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
 import { SkillCategoryTypes, TechStackTypes } from "@/app/lib/types";
-import { motion, useInView } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import classNames from "classnames";
+import { useInView } from "framer-motion";
 import { Clock, Presentation } from "lucide-react";
 import Image from "next/image";
-import { useRef, useState } from "react";
-import CategoryButton from "./CategoryButton";
+import React, { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import SkillList from "./SkillList";
+import CategoryButton from "./CategoryButton";
 const buttons = {
    upper: ["Languages", "Libraries", "Frameworks"],
    lower: ["Databases", "Tools"],
@@ -23,7 +26,10 @@ const SkillsSection = () => {
       },
    );
 
-   const handleChangeCategory = (category: any, section: "upper" | "lower") => {
+   const handleChangeCategory = (
+      category: string,
+      section: "upper" | "lower",
+   ) => {
       if (section === "upper") {
          setSelectedCategory({ ...selectedCategory, upper: category });
       } else {

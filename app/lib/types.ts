@@ -55,6 +55,6 @@ export type FormTypes = z.infer<typeof EmailSchema>;
 
 export type ServiceTypes = { icon: string; title: string; description: string };
 export type SkillCategoryTypes = {
-   upper: "Languages" | "Libraries" | "Frameworks";
-   lower: "Databases" | "Tools";
+   upper: string | "Languages" | "Libraries" | "Frameworks";
+   lower: string | "Databases" | "Tools";
 };
