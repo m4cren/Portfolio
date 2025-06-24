@@ -37,8 +37,7 @@ const ProjectsSection = () => {
          className={classNames(
             "w-full flex items-center  justify-center snap-start lg:snap-center ",
             {
-               "items-start pt-25 md:pt-40 h-[fit] lg:h-[100vh]":
-                  selectedProject,
+               "items-start pt-25 md:pt-40 h-fit lg:h-[100vh]": selectedProject,
                "h-[100vh]": !selectedProject,
             },
          )}

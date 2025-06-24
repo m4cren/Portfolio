@@ -12,17 +12,17 @@
 }
 
 h1 {
-   @apply text-softbutter font-bold text-5xl md:text-7xl [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)];
+   @apply text-softbutter font-bold text-5xl md:text-7xl [text-shadow:-2px_2px_4px_rgba(0,0,0,0.2)];
 }
 h2 {
-   @apply text-softbutter font-bold text-xl md:text-3xl [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)];
+   @apply text-softbutter font-bold text-xl md:text-3xl [text-shadow:-2px_2px_4px_rgba(0,0,0,0.2)];
 }
 h4 {
-   @apply text-softbutter font-medium text-xl md:text-3xl [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)];
+   @apply text-softbutter font-medium text-xl md:text-3xl [text-shadow:-2px_2px_4px_rgba(0,0,0,0.2)];
 }
 
 p {
-   @apply text-softbutter font-medium text-sm md:text-lg [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)];
+   @apply text-softbutter font-medium text-sm md:text-lg [text-shadow:-2px_2px_4px_rgba(0,0,0,0.2)];
 }
 .icon-shadow {
    filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.4));

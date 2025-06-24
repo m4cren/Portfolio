@@ -1,5 +1,6 @@
 import { ProjectTypes } from "@/app/lib/types";
 import { ArrowBigLeft, Clock, Github, Globe, Presentation } from "lucide-react";
+import TechStack from "./TechStack";
 
 interface SelectedProjectProps {
    handleBack: () => void;
@@ -74,40 +75,22 @@ const SelectedProject = ({
                <hr className="text-softbutter opacity-40" />
                <ul className="flex flex-col gap-6">
                   {selectedProject.tech_stack.frontend && (
-                     <li className="flex flex-row justify-between">
-                        <p className="text-[1rem]! md:text-[1.4rem]!">
-                           Frontend
-                        </p>
-                        <p className="text-[0.9rem]! md:text-[1rem]! font-light! w-[50%]">
-                           {selectedProject.tech_stack.frontend
-                              ?.map((item) => item)
-                              .join(", ")}
-                        </p>
-                     </li>
+                     <TechStack
+                        label="Frontend"
+                        selectedProject={selectedProject}
+                     />
                   )}
                   {selectedProject.tech_stack.backend && (
-                     <li className="flex flex-row justify-between">
-                        <p className="text-[1rem]! md:text-[1.4rem]!">
-                           Backend
-                        </p>
-                        <p className="text-[0.9rem]! md:text-[1rem]! font-light! w-[50%]">
-                           {selectedProject.tech_stack.backend
-                              ?.map((item) => item)
-                              .join(", ")}
-                        </p>
-                     </li>
+                     <TechStack
+                        label="Backend"
+                        selectedProject={selectedProject}
+                     />
                   )}
                   {selectedProject.tech_stack.integrated_api && (
-                     <li className="flex flex-row justify-between">
-                        <p className="text-[1rem]! md:text-[1.4rem]!">
-                           Integrated APIs
-                        </p>
-                        <p className="text-[0.9rem]! md:text-[1rem]! font-light! w-[50%]">
-                           {selectedProject.tech_stack.integrated_api
-                              ?.map((item) => item)
-                              .join(", ")}
-                        </p>
-                     </li>
+                     <TechStack
+                        label="Intgrated APIs"
+                        selectedProject={selectedProject}
+                     />
                   )}
                </ul>
             </div>

@@ -54,7 +54,7 @@ const HomeSection = () => {
                         WebkitTapHighlightColor: "transparent",
                         WebkitBackfaceVisibility: "hidden",
                         backfaceVisibility: "hidden",
-                        transform: "translateZ(0)", // Forces GPU rendering
+                        transform: "translateZ(0)",
                      }}
                   >
                      Hire Me
