@@ -24,7 +24,7 @@ const skillCards: ServiceTypes[] = [
       icon: "figma",
       title: "UI / UX Design",
       description:
-         "I create clean modern interfaces with strong focus on userflow and engagement.Each design balances aaesthetics with functionality.",
+         "I use Figma to plan and prototype interfaces before development, helping ensure a smoother workflow and better user experience. My designs prioritize both usability and engagement while maintaining a clean, modern look.",
    },
    {
       icon: "blender",
@@ -42,7 +42,7 @@ const skillCards: ServiceTypes[] = [
       icon: "backend",
       title: "Backend Development",
       description:
-         "I build scalable server-side logic and APIs that keep everything running smoothly behind the scenes",
+         "I build scalable server-side logic and APIs to ensure smooth and reliable performance behind the scenes. I also integrate payment solutions like the PayMongo API to enable secure and seamless online transactions.",
    },
 ];
 

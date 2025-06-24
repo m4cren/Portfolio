@@ -54,7 +54,7 @@ const ProjectsSection = () => {
                )}
             >
                <div className="flex flex-col items-center lg:items-start">
-                  <h1 className="text-3xl! sm:text-4xl!">What I've Built</h1>
+                  <h1 className="text-4xl! sm:text-5xl!">What I've Built</h1>
                   <p>A look into my digital playground</p>
                </div>
                <div className="">

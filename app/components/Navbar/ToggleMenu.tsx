@@ -1,7 +1,7 @@
 "use client";
 import { links } from "@/app/lib/constants";
 import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
-
+import { motion } from "framer-motion";
 import classNames from "classnames";
 import React, { useState } from "react";
 
@@ -31,7 +31,18 @@ const ToggleMenu = ({
          <ul className="flex flex-col items-center mt-6  min-[310px]:mt-8 min-[400px]:mt-12 gap-4 min-[350px]:gap-5 min-[400px]:gap-8 md:gap-10">
             {links.map((link, index) => (
                <li key={index}>
-                  <p
+                  <motion.p
+                     key={index}
+                     initial={{ x: 269, opacity: 0 }}
+                     animate={{ x: 0, opacity: 1 }}
+                     exit={{ x: 269, opacity: 0 }}
+                     transition={{
+                        type: "spring",
+                        stiffness: 300, // more stiffness = snappier
+                        damping: 20, // less damping = faster stop
+                        mass: 0.4, // lower = less inertia
+                        delay: index * 0.12,
+                     }}
                      onClick={handleClosing}
                      className={classNames(
                         "relative cursor-pointer text-2xl! md:text-3xl!  font-medium! hover:text-goldenbeige! transition-all! duration-250!",
@@ -41,7 +52,7 @@ const ToggleMenu = ({
                      )}
                   >
                      <a href={`#${link?.value}`}>{link?.label}</a>
-                  </p>
+                  </motion.p>
                </li>
             ))}
          </ul>
