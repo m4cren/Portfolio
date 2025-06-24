@@ -120,7 +120,7 @@ const SelectedProject = ({
                height={9 * 40}
                className="rounded-lg shadow-lg"
             >
-               Browser doesn't support the video tag
+               Browser doesn&apos;t support the video tag
             </video>
             <div className="flex flex-col gap-2 w-[85%] lg:w-full">
                <h4>Why I built this?</h4>

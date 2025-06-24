@@ -23,7 +23,7 @@ const HomeSection = () => {
          >
             <div className="flex flex-col gap-0 md:gap-2">
                <motion.h1 className="text-[2.5rem]! min-[350px]:text-5xl! md:text-7xl!">
-                  Hi it's Rainier
+                  Hi it&apos;s Rainier
                </motion.h1>
                <Greet />
                <p className=" w-[95%] md:w-[60%] mt-4 md:mt-6">

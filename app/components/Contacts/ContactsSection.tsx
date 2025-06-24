@@ -45,7 +45,7 @@ const ContactsSection = () => {
                      ) : isSuccess ? (
                         <p>Your message has been successfully delivered.</p>
                      ) : (
-                        <p>Need a developer? Let's talk</p>
+                        <p>Need a developer? Let&apos;s talk</p>
                      )}
                   </div>
                   <EmailForm
