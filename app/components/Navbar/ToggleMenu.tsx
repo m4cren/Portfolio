@@ -51,7 +51,7 @@ const ToggleMenu = ({ handleClosing, isClosing }: ToggleMenuProps) => {
                </li>
             ))}
          </ul>
-         <p className="absolute bottom-2 min-[390px]:bottom-10 md:bottom-6 left-0 right-0 text-softbutter/65! font-light! text-[0.7rem]! min-[350px]:text-xs! md:text-sm! text-center">
+         <p className="absolute bottom-2 min-[390px]:bottom-10 md:bottom-6 left-3 right-3 text-softbutter/65! font-light! text-[0.65rem]! min-[350px]:text-xs! md:text-sm! text-center">
             © 2025 Rainier Reyes. Built with Next.js, React Three Fiber &
             Tailwind.
          </p>

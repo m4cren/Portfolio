@@ -1,4 +1,5 @@
 import { ServiceTypes } from "@/app/lib/types";
+import React from "react";
 import { IconType } from "react-icons";
 
 interface ServiceCardProps {

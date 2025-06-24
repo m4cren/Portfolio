@@ -35,7 +35,7 @@ const HomeSection = () => {
             </div>
             <div className="flex flex-col-reverse lg:flex-row items-start  lg:items-center gap-6 md:gap-10">
                <div className="flex flex-row items-center gap-4">
-                  <button className=" [background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] py-[8px] bg-gradient-to-t from-leather to-goldenbeige  cursor-pointer text-softbutter [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] font-medium text-sm md:text-lg rounded-lg">
+                  <button className=" [background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] py-[10px] lg:py-[8px] bg-gradient-to-t from-leather to-goldenbeige  cursor-pointer text-softbutter [text-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] [box-shadow:-2px_2px_4px_rgba(0,0,0,0.4)] font-medium text-sm md:text-lg rounded-lg">
                      <a
                         href="/Rainier_Reyes_resume.pdf"
                         className="w-full px-6 md:px-10"
