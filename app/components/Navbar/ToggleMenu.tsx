@@ -23,7 +23,7 @@ const ToggleMenu = ({ handleClosing, isClosing }: ToggleMenuProps) => {
             },
          )}
       >
-         <ul className="flex flex-col items-center mt-6  min-[310px]:mt-8 min-[400px]:mt-12 gap-4 min-[350px]:gap-5 min-[400px]:gap-8 md:gap-10">
+         <ul className="flex flex-col items-center mt-6  min-[310px]:mt-8 min-[400px]:mt-12 gap-2 min-[350px]:gap-4 min-[400px]:gap-6 md:gap-10 pb-12">
             {links.map((link, index) => (
                <li key={index}>
                   <motion.p
@@ -46,12 +46,12 @@ const ToggleMenu = ({ handleClosing, isClosing }: ToggleMenuProps) => {
                         },
                      )}
                   >
-                     <a href={`#${link?.value}`}>{link?.label}</a>
+                     <a href={`#${link?.value!}`}>{link?.label}</a>
                   </motion.p>
                </li>
             ))}
          </ul>
-         <p className="absolute bottom-2 min-[390px]:bottom-10 md:bottom-6 left-3 right-3 text-softbutter/65! font-light! text-[0.65rem]! min-[350px]:text-xs! md:text-sm! text-center">
+         <p className="absolute bottom-2 min-[390px]:bottom-8 md:bottom-6 left-3 right-3 text-softbutter/65! font-light! text-[0.65rem]! min-[350px]:text-xs! md:text-sm! text-center">
             © 2025 Rainier Reyes. Built with Next.js, React Three Fiber &
             Tailwind.
          </p>
