@@ -46,7 +46,7 @@ const ToggleMenu = ({ handleClosing, isClosing }: ToggleMenuProps) => {
                         },
                      )}
                   >
-                     <a href={`#${link?.value!}`}>{link?.label}</a>
+                     <a href={`#${link?.value}`}>{link?.label}</a>
                   </motion.p>
                </li>
             ))}
