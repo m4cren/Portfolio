@@ -10,11 +10,7 @@ interface ToggleMenuProps {
    isClosing: boolean;
 }
 
-const ToggleMenu = ({
-   handleToggle,
-   handleClosing,
-   isClosing,
-}: ToggleMenuProps) => {
+const ToggleMenu = ({ handleClosing, isClosing }: ToggleMenuProps) => {
    const { activeSection } = useActiveSection();
 
    return (

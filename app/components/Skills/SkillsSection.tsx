@@ -3,15 +3,12 @@ import AnimatedSphere from "@/app/3d_components/Sphere";
 import { techStack } from "@/app/lib/constants";
 import { useActiveSection } from "@/app/lib/contexts/ActiveSectionProvider";
 import { SkillCategoryTypes, TechStackTypes } from "@/app/lib/types";
-import { Canvas } from "@react-three/fiber";
-import classNames from "classnames";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Clock, Presentation } from "lucide-react";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import SkillList from "./SkillList";
+import { useRef, useState } from "react";
 import CategoryButton from "./CategoryButton";
+import SkillList from "./SkillList";
 const buttons = {
    upper: ["Languages", "Libraries", "Frameworks"],
    lower: ["Databases", "Tools"],

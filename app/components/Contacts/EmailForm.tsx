@@ -44,7 +44,7 @@ const EmailForm = ({
 
          setIsSuccess(true);
          setErrorMsg("");
-      } catch (error) {
+      } catch {
          setErrorMsg("An unexpected error occured");
       } finally {
          setIsLoading(false);
