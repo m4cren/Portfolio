@@ -36,24 +36,7 @@ export const techStack: TechStackTypes[] = [
       experience: "4 months of ongoing experience",
       use: "For ReactJs and NextJs projects",
    },
-   {
-      category: "Languages",
-      icon: "java",
-      label: "Java",
-      description:
-         "A versatile, object-oriented language used for building cross-platform applications.",
-      experience: "Total of 3 months of experience during my 1st-year",
-      use: "My second programming-language",
-   },
-   {
-      category: "Languages",
-      icon: "c++",
-      label: "C++",
-      description:
-         "A powerful, high-performance language widely used for system and game development.",
-      experience: "Total of 3 months of experience during my 1st-year",
-      use: "My first programming-language",
-   },
+
    {
       category: "Databases",
       icon: "mysql",
