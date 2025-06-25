@@ -11,7 +11,7 @@ const Greet = () => {
          strings: [
             "I'm a <strong>Frontend Developer</strong>",
             "An Aspiring <strong >Software Engineer</strong>",
-            "Building with <strong>Next.js, Tailwind & TypeScript</strong>",
+
             "Focused on <strong>Frontend Excellence</strong>",
          ],
          typeSpeed: 100,
