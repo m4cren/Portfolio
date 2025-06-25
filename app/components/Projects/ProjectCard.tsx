@@ -20,7 +20,7 @@ const ProjectCard = ({ item, handleSelectedProject }: ProjectCardProps) => {
             width={500}
             onLoad={() => setIsLoaded(true)}
             height={500}
-            className="w-[90%] -mb-4"
+            className="w-[80%] md:w-[90%] -mb-4"
          />
          {!isLoaded && (
             <div className="absolute inset-0 flex items-center justify-center h-1/2">
@@ -28,8 +28,8 @@ const ProjectCard = ({ item, handleSelectedProject }: ProjectCardProps) => {
             </div>
          )}
          <div className="flex flex-col items-center gap-2">
-            <h4>{item.label}</h4>
-            <p className="text-center text-xs! md:text-sm! w-[80%] md:w-[95%]">
+            <h4 className="text-3xl!">{item.label}</h4>
+            <p className="text-center text-xs! md:text-sm! w-[90%] md:w-[95%]">
                {item.short_description}
             </p>
          </div>
