@@ -51,9 +51,9 @@ const ToggleMenu = ({ handleClosing, isClosing }: ToggleMenuProps) => {
                </li>
             ))}
          </ul>
-         <p className="w-[80vh] pb-4 md:pb-8 text-softbutter/65! font-light! text-[0.65rem]! min-[350px]:text-xs! md:text-sm! text-center">
-            © 2025 Rainier Reyes. Built with Next.js, React Three Fiber &
-            Tailwind.
+         <p className="max-w-[90vh] pb-4 md:pb-8 text-softbutter/65! font-light! text-[0.65rem]! min-[350px]:text-xs! md:text-sm! text-center">
+            © 2025 Rainier Reyes. Built with Next.js,
+            <br className="block md:hidden" /> React Three Fiber & Tailwind.
          </p>
       </div>
    );
