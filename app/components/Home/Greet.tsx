@@ -9,8 +9,10 @@ const Greet = () => {
    useEffect(() => {
       const typed = new Typed(ref.current, {
          strings: [
-            "I'm a <strong>Website Developer</strong>",
+            "I'm a <strong>Frontend Developer</strong>",
             "An Aspiring <strong >Software Engineer</strong>",
+            "Building with <strong>Next.js, Tailwind & TypeScript</strong>",
+            "Focused on <strong>Frontend Excellence</strong>",
          ],
          typeSpeed: 100,
          backSpeed: 100,
