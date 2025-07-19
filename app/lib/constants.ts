@@ -57,11 +57,11 @@ export const techStack: TechStackTypes[] = [
    },
    {
       category: "Databases",
-      icon: "mongodb",
-      label: "MongoDB",
+      icon: "firebase",
+      label: "Firebase",
       description:
-         "A NoSQL database designed for storing flexible, JSON-like documents.",
-      experience: "Week of experience",
+         "Real-time database and backend tools for modern apps.",
+      experience: "Weeks of experience",
       use: "Used while learning NextJS",
    },
    {
@@ -266,6 +266,30 @@ export const projects: ProjectTypes[] = [
             "React Hook Form",
          ],
          backend: ["Prisma", "NextAuthJS", "Zod", "MySQL"],
+      },
+   },
+   {
+      label: "Whos That Bio",
+      short_description:
+         "A real-time quiz app inspired by Who is that pokemon built on NextJs and Firebase.",
+      date_range: "July 12, 2025 - July 15, 2025",
+      project_details: "Self-Project",
+      github_repo: "https://github.com/m4cren/WhosThatBio",
+      image_url: "whos-that-bio",
+      video_url: "whos-that-bio",
+
+      long_details:
+         "I created this project just for quiz on our academic report which I explore and learn a lot of Firebase using its firestore database and learn more about real-time event handling.",
+      tech_stack: {
+         frontend: [
+            "NextJs",
+            "Typescript",
+            "TailwindCSS",
+            "DaisyUI",
+            "React Query",
+   
+         ],
+         backend: ["Firebase"],
       },
    },
 ];
