@@ -15,7 +15,7 @@ export const techStack: TechStackTypes[] = [
       icon: "python",
       label: "Python",
       description: "Versatile scripting for backend logic and automation",
-      experience: "8 months of ongoing experience",
+      experience: "9 months of ongoing experience",
       use: "Regular use for personal and academic projects",
    },
    {
@@ -33,7 +33,7 @@ export const techStack: TechStackTypes[] = [
       label: "Typescript",
       description:
          "A typed language for building safer and scalable web applications.",
-      experience: "4 months of ongoing experience",
+      experience: "8 months of ongoing experience",
       use: "For ReactJs and NextJs projects",
    },
 
@@ -59,9 +59,8 @@ export const techStack: TechStackTypes[] = [
       category: "Databases",
       icon: "firebase",
       label: "Firebase",
-      description:
-         "Real-time database and backend tools for modern apps.",
-      experience: "Weeks of experience",
+      description: "Real-time database and backend tools for modern apps.",
+      experience: "Months of experience",
       use: "Used while learning NextJS",
    },
    {
@@ -70,7 +69,7 @@ export const techStack: TechStackTypes[] = [
       label: "ReactJS",
       description:
          "A JavaScript library for building fast and interactive user interfaces.",
-      experience: "5 months of ongoing experience",
+      experience: "7 months of ongoing experience",
       use: "Regular use for my personal and academic projects",
    },
    {
@@ -79,7 +78,7 @@ export const techStack: TechStackTypes[] = [
       label: "ThreeJS",
       description:
          "A JavaScript library for creating 3D graphics in the browser using WebGL.",
-      experience: "3 months of ongoing experience",
+      experience: "4 months of ongoing experience",
       use: "Used on my specialized personal and academic projects",
    },
    {
@@ -115,7 +114,7 @@ export const techStack: TechStackTypes[] = [
       label: "NextJS",
       description:
          "A React framework for building fast, scalable, and full-stack web applications.",
-      experience: "2 months of ongoing experience",
+      experience: "4 months of ongoing experience",
       use: "For my personal and client projects",
    },
    {
@@ -124,7 +123,7 @@ export const techStack: TechStackTypes[] = [
       label: "TailwindCSS",
       description:
          "A utility-first CSS framework for rapidly building custom user interfaces.",
-      experience: "5 months of ongoing experience",
+      experience: "7 months of ongoing experience",
       use: "Regular use for all of my prjects",
    },
    {
@@ -142,7 +141,7 @@ export const techStack: TechStackTypes[] = [
       label: "Figma",
       description:
          "A cloud-based design tool for creating user interfaces, prototypes, and collaborative designs.",
-      experience: "6 months ofongoing experience",
+      experience: "7 months ofongoing experience",
       use: "Design first then do the frontend",
    },
    {
@@ -169,7 +168,7 @@ export const techStack: TechStackTypes[] = [
       label: "Github",
       description:
          "A platform for hosting, version control, and collaboration on code using Git.",
-      experience: "5 months of ongoing experience",
+      experience: "6 months of ongoing experience",
       use: "Regular use for every projects",
    },
    {
@@ -287,7 +286,6 @@ export const projects: ProjectTypes[] = [
             "TailwindCSS",
             "DaisyUI",
             "React Query",
-   
          ],
          backend: ["Firebase"],
       },

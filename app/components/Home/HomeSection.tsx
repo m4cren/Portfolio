@@ -27,7 +27,7 @@ const HomeSection = () => {
                </motion.h1>
                <Greet />
                <p className=" w-[95%] md:w-[60%] mt-4 md:mt-6">
-                  A 2nd-year Computer Engineering student at Laguna State
+                  A 3rd-year Computer Engineering student at Laguna State
                   Polytechnic University – San Pablo Campus, and a self-taught
                   software developer passionate about building modern web
                   applications. Based in the <strong>Philippines</strong>.
