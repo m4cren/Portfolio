@@ -28,7 +28,7 @@ const NavBar = ({
       >
          <div>
             <Image
-               src={"/images/Profile.jpg"}
+               src={"/images/Profile.png"}
                alt="Rainier"
                width={60}
                height={60}

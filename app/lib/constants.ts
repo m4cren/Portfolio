@@ -184,6 +184,70 @@ export const techStack: TechStackTypes[] = [
 
 export const projects: ProjectTypes[] = [
    {
+      label: "Bloo Pop",
+      short_description:
+         "A creator platform for messaging, subscriptions, and fan engagement.",
+      date_range: "September 2025 - Present",
+      project_details: "Professional Freelance Project • Frontend Development",
+      github_repo: "https://github.com/danielleguevara/Bloo",
+      image_url: "bloopop",
+      video_url: "bloopop",
+      long_details:
+         "Bloo Pop is a creator-focused social platform designed to strengthen engagement between creators and their communities. The platform provides real-time messaging, media sharing, creator updates, subscription management, activity feeds, and personalized user experiences. As a Frontend Developer, I contributed to building responsive user interfaces, messaging systems, creator dashboards, settings management, activity feeds, media galleries, and various user-facing features. The project emphasizes performance, mobile responsiveness, accessibility, and seamless user interaction across devices.",
+      tech_stack: {
+         frontend: [
+            "Next.js 14",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Redux Toolkit",
+            "React Context",
+         ],
+
+         backend: ["PostgreSQL", "Supabase", "Edge Functions"],
+
+         integrated_api: [
+            "Supabase Realtime",
+            "Push Notifications",
+            "Email Notifications",
+            "Content Moderation Services",
+         ],
+      },
+   },
+   {
+      label: "Equity OS",
+      short_description:
+         "An all-in-one platform for personal finance, investing, and trading analytics",
+      date_range: "February 2026 - June 2026",
+      project_details: "Personal Project",
+      github_repo: "https://github.com/m4cren/EquityOS",
+      image_url: "equity-os",
+      video_url: "equity-os",
+      long_details:
+         "Equity OS is a desktop-first financial management platform designed to centralize personal finance, investing, and trading workflows. The application enables users to manage multiple financial accounts, track income and expenses, monitor net worth growth, create budgets, analyze financial trends, and maintain a structured trading journal. Built with Electron and Next.js, Equity OS provides a native desktop experience while leveraging modern web technologies for performance and scalability. The project was created to solve my own need for a customizable financial dashboard and trading journal without relying on multiple third-party tools.",
+      tech_stack: {
+         frontend: [
+            "Next.js 15",
+            "React",
+            "TypeScript",
+            "Tailwind CSS v4",
+            "Redux Toolkit",
+            "Recharts",
+            "Lucide React",
+            "React Hook Form",
+         ],
+
+         backend: [
+            "Electron",
+            "Firebase Firestore",
+            "Firebase Authentication",
+            "Node.js",
+         ],
+
+         integrated_api: ["Firebase", "Firestore Database", "Chart Analytics"],
+      },
+   },
+   {
       label: "Metafeast",
       short_description:
          "An Immesive 3D Web Interface for Modern Restaurant Experience",
