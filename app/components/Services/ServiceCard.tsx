@@ -11,7 +11,7 @@ const ServiceCard = ({ item, IconComponent }: ServiceCardProps) => {
    return (
       <li
          style={{ boxShadow: "-2px 2px 4px rgba(0,0,0,0.4)" }}
-         className="[background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] flex flex-col justify-center items-center gap-5 md:gap-6 lg:gap-8 px-4  bg-gradient-to-t from-leather to-goldenbeige rounded-lg [box-shadow:0_0_7px_rgba(0,0,0,0.3)_inset] w-[9rem] h-[10rem] min-[350px]:w-[10rem] min-[350px]:h-[12rem] md:w-[16rem] md:h-[20rem] lg:w-[18rem] lg:h-[24rem]"
+         className="last:col-span-2 last:justify-self-center lg:last:col-span-1 [background-image:linear-gradient(to_top,var(--color-leather),var(--color-goldenbeige))] flex flex-col justify-center items-center gap-5 md:gap-6 lg:gap-8 px-4 bg-gradient-to-t from-leather to-goldenbeige rounded-lg [box-shadow:0_0_7px_rgba(0,0,0,0.3)_inset] w-[9rem] h-[10rem] min-[350px]:w-[10rem] min-[350px]:h-[12rem] md:w-[16rem] md:h-[20rem] lg:w-[18rem] lg:h-[24rem]"
       >
          <i className="text-softbutter scale-150 min-[350px]:scale-200">
             <IconComponent />

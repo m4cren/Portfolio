@@ -37,23 +37,13 @@ export const techStack: TechStackTypes[] = [
       use: "For ReactJs and NextJs projects",
    },
 
-   {
+  {
       category: "Databases",
-      icon: "mysql",
-      label: "MySQL",
-      description:
-         "A relational database system used to store and manage structured data.",
-      experience: "5 months of ongoing experience",
-      use: "Regular use for personal and academic projects",
-   },
-   {
-      category: "Databases",
-      icon: "sqlite",
-      label: "SQLite",
-      description:
-         "A lightweight, file-based database engine ideal for local and embedded applications.",
-      experience: "Total of 3 months of experience",
-      use: "Used for two of my academic projects",
+      icon: "supabase",
+      label: "Supabase",
+      description: "An open-source backend platform providing a PostgreSQL database, authentication, real-time features, and storage for modern web applications.",
+      experience: "Months of experience",
+      use: "Used while learning NextJS",
    },
    {
       category: "Databases",
@@ -173,10 +163,10 @@ export const techStack: TechStackTypes[] = [
    },
    {
       category: "Tools",
-      icon: "notion",
-      label: "Notion",
+      icon: "sketchup",
+      label: "Sketchup",
       description:
-         "An all-in-one workspace for note-taking, project management, and team collaboration.",
+         "A 3D modeling tool used to create architectural designs, product concepts, and detailed spatial visualizations.",
       experience: "Years of experience",
       use: "To manage my workflows",
    },

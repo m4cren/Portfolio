@@ -19,12 +19,7 @@ const itemMap: { [key: string]: LucideIcon } = {
 };
 
 const skillCards: ServiceTypes[] = [
-   {
-      icon: "figma",
-      title: "UI / UX Design",
-      description:
-         "I use Figma to plan and prototype interfaces before development, helping ensure a smoother workflow and better user experience.",
-   },
+  
    {
       icon: "blender",
       title: "3D Modeling",
@@ -69,7 +64,7 @@ const ServicesSection = () => {
                environments, and solid full-stack performance.
             </p>
          </div>
-         <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+         <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4 place-self-center last:col-span-2 last:justify-self-center lg:last:col-span-1">
             {skillCards.map((item, index) => {
                const IconComponent = itemMap[item.icon];
                return (
